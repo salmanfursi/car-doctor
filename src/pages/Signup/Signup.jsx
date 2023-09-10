@@ -9,14 +9,14 @@ const Signup = () => {
    const handleSignup=event=>{
       event.preventDefault();
       const form=event.target;
-      const name =form.name.value;
       const password =form.password.value;
       const email =form.email.value;
-       
+      console.log(email)
+
       createUser(email, password)
       .then((result) => {
          const user = result.user;
-         console.log(user)
+         console.log('signup',user)
        })
        .catch(error => {
          console.log(error)
@@ -30,7 +30,7 @@ const Signup = () => {
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                <div className="card-body">
-               <h1 className="text-3xl text-center font-bold text-orange-600">Login</h1>
+               <h1 className="text-3xl text-center font-bold text-orange-600">Signup</h1>
                   <form onSubmit={handleSignup}>
                   <div className="form-control">
                      <label className="label">
