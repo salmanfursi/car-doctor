@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Checkout = () => {
    const service = useLoaderData();
-   const { title, price, _id } = service;
+   const { title, price, _id,img } = service;
    const { user } = useContext(AuthContext);
 
    const handlCheckout = (event) => {
@@ -21,8 +21,9 @@ const Checkout = () => {
          name: name,
          date: date,
          email: email,
-         service: _id,
-         price: price
+         service_id: _id,
+         price: price,
+         img:img
       }
       console.log(order)
       fetch('http://localhost:5000/checkout', {
