@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Privateroute = ({children}) => {
    const { user, Loading } = useContext(AuthContext)
@@ -13,7 +13,7 @@ const Privateroute = ({children}) => {
    }
 
    return (
-      <NavLink to='/login' replace></NavLink>
+      <Navigate to='/login' replace></Navigate>
    );
 };
 
