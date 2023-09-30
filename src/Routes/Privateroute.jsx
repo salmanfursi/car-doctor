@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { NavLink } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const Privateroute = ({children}) => {
+   const location =useLocation()
    const { user, Loading } = useContext(AuthContext)
 
    if (Loading) {
@@ -13,7 +14,8 @@ const Privateroute = ({children}) => {
    }
 
    return (
-      <NavLink to='/login' replace></NavLink>
+      <Navigate to="/login" state={{ from: location }} replace />
+    
    );
 };
 

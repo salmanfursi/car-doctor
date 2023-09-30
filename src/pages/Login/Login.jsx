@@ -1,11 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from './../../../assets/images/login/login.svg';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
+
    const { signin } = useContext(AuthContext);
    const [userEmail, setUserEmail] = useState('');
+
+   const location = useLocation();
+   const from = location.state?.from?.pathname || "/";
+   const navigate = useNavigate()
+   navigate(from, { replace: true })
 
    const handlelogin = (event) => {
       event.preventDefault();
@@ -18,12 +25,15 @@ const Login = () => {
             // Access the user's email from the result object
             const user = result.user;
             setUserEmail(user.email);
+            navigate(from, { replace: true })
             console.log(user);
+
          })
          .catch((error) => {
             console.log(error);
          });
-   };
+
+   }
 
 
    return (
@@ -40,7 +50,7 @@ const Login = () => {
                         <label className="label">
                            <span className="label-text">Email</span>
                         </label>
-                        <input name="email" type="text"defaultValue={userEmail} placeholder="email" className="input input-bordered" />
+                        <input name="email" type="text" defaultValue={userEmail} placeholder="email" className="input input-bordered" />
                      </div>
                      <div className="form-control">
                         <label className="label">
@@ -58,6 +68,7 @@ const Login = () => {
                   <p className="my-4 text-center">
                      New to cars doctor <Link className="text-orange-600 font-bold" to="/signup">sign up</Link>
                   </p>
+                  <SocialLogin></SocialLogin>
                </div>
             </div>
          </div>
