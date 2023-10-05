@@ -15,7 +15,7 @@ const BookingRaw = ({ booking,setbookings,bookings }) => {
     })
     .then((result) => {
       if (result.isConfirmed){
-      fetch(`http://localhost:5000/checkout${_id}`, {
+      fetch(`https://car-doctor-server-fi13n92wu-salmanfursi.vercel.app/checkout${_id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -36,7 +36,7 @@ const BookingRaw = ({ booking,setbookings,bookings }) => {
   const handleupdate = () => {
 
 
-      fetch(`http://localhost:5000/checkout${_id}`, {
+      fetch(`https://car-doctor-server-fi13n92wu-salmanfursi.vercel.app/checkout${_id}`, {
         method: "PATCH",
         headers: {
            "Content-Type": "application/json"

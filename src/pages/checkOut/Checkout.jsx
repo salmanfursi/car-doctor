@@ -26,7 +26,7 @@ const Checkout = () => {
          img:img
       }
       console.log(order)
-      fetch('http://localhost:5000/checkout', {
+      fetch('https://car-doctor-server-fi13n92wu-salmanfursi.vercel.app/checkout', {
          method: "POST",
          headers: {
             "Content-Type": "application/json"

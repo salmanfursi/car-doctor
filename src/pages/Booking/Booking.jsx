@@ -10,7 +10,7 @@ const Booking = () => {
 
    // const { name,date,email,service_id,price } = booking;
 
-   const url = `http://localhost:5000/checkout?email=${user.email}`;
+   const url = `https://car-doctor-server-fi13n92wu-salmanfursi.vercel.app/checkout?email=${user.email}`;
    useEffect(() => {
       fetch(url,{
          method:'GET',
