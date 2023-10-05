@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+<<<<<<< HEAD
 import { Navigate, useLocation } from "react-router-dom";
+=======
+import { Navigate } from "react-router-dom";
+>>>>>>> 2a4929f3727b90d99583cc1494a634c5b50aec54
 
 const Privateroute = ({children}) => {
    const location =useLocation()
@@ -14,8 +18,12 @@ const Privateroute = ({children}) => {
    }
 
    return (
+<<<<<<< HEAD
       <Navigate to="/login" state={{ from: location }} replace />
     
+=======
+      <Navigate to='/login' replace></Navigate>
+>>>>>>> 2a4929f3727b90d99583cc1494a634c5b50aec54
    );
 };
 
