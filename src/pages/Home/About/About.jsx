@@ -2,7 +2,7 @@ import pas from './../../../../assets/images/about_us/person.jpg'
 import part from './../../../../assets/images/about_us/parts.jpg'
 const About = () => {
    return (
-      <div className="hero  bg-gray-200 rounded-xl md:h-[500px]">
+      <div className="hero  bg-gray-200 rounded-xl">
          <div className="hero-content flex-col lg:flex-row">
             <div className='lg:w-1/2 relative'>
             <img src={pas} className="w-3/4 rounded-lg shadow-2xl " />
